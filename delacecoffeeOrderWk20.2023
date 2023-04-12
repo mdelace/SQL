@@ -1,0 +1,52 @@
+CREATE TABLE delacecoffee(id INTEGER PRIMARY KEY, Item TEXT, COST INTEGER, Size TEXT, Category TEXT, Sold INTEGER);
+
+INSERT INTO delacecoffee VALUES (1, "Cafe American", 4.59, "Small", "Coffee-Hot", 11);
+INSERT INTO delacecoffee VALUES (2, "Cappucchino", 5.05, "Small", "Coffee-Hot", 20);
+INSERT INTO delacecoffee VALUES (3, "Cafe Express", 3.55, "Small", "Coffee-Hot", 23);
+INSERT INTO delacecoffee VALUES (4, "Dulce de Leche Latte", 4.05, "Small", "Coffee-Hot", 12);
+INSERT INTO delacecoffee VALUES (5, "Honey Chamomile", 3.55, "Small", "Tea-Hot", 40);
+INSERT INTO delacecoffee VALUES (6, "Honey Mint", 3.50, "Small", "Tea-Hot", 35);
+INSERT INTO delacecoffee VALUES (7, "Honey Cold Brew", 5.05, "Small", "Coffee-Cold", 45);
+INSERT INTO delacecoffee VALUES (8, "Ice Cafe American", 4.59, "Small", "Coffee-Cold",50);
+INSERT INTO delacecoffee VALUES (9, "Hibiscus-Berry", 5.25, "Small", "Tea-Cold",55);
+INSERT INTO delacecoffee VALUES (10, "Coconut Tea", 5.15, "Small", "Tea-Cold",45);
+INSERT INTO delacecoffee VALUES (11, "Cafe American", 4.89, "Medium", "Coffee-Hot",45);
+INSERT INTO delacecoffee VALUES (12, "Cappucchino", 5.35, "Medium", "Coffee-Hot", 76);
+INSERT INTO delacecoffee VALUES (13, "Cafe Express", 3.85, "Medium", "Coffee-Hot",23);
+INSERT INTO delacecoffee VALUES (14, "Dulce de Leche Latte", 4.35, "Medium", "Coffee-Hot",56);
+INSERT INTO delacecoffee VALUES (15, "Honey Chamomile", 3.85, "Medium", "Tea-Hot", 21);
+INSERT INTO delacecoffee VALUES (16, "Honey Mint", 3.80, "Medium", "Tea-Hot",34);
+INSERT INTO delacecoffee VALUES (17, "Honey Cold Brew", 5.35, "Medium", "Coffee-Cold",32);
+INSERT INTO delacecoffee VALUES (18, "Ice Cafe American", 4.89, "Medium", "Coffee-Cold",55);
+INSERT INTO delacecoffee VALUES (19, "Hibiscus-Berry", 5.55, "Medium", "Tea-Cold",99);
+INSERT INTO delacecoffee VALUES (20, "Coconut Tea", 5.45, "Medium", "Tea-Cold",100);
+INSERT INTO delacecoffee VALUES (21, "Cafe American", 5.19, "Large", "Coffee-Hot",97);
+INSERT INTO delacecoffee VALUES (22, "Cappucchino", 5.65, "Large", "Coffee-Hot",43);
+INSERT INTO delacecoffee VALUES (23, "Cafe Express", 4.05, "Large", "Coffee-Hot",23);
+INSERT INTO delacecoffee VALUES (24, "Dulce de Leche Latte", 4.65, "Large", "Coffee-Hot",100);
+INSERT INTO delacecoffee VALUES (25, "Honey Chamomile", 4.05, "Large", "Tea-Hot",99);
+INSERT INTO delacecoffee VALUES (26, "Honey Mint", 4.10, "Large", "Tea-Hot", 34);
+INSERT INTO delacecoffee VALUES (27, "Honey Cold Brew", 5.65, "Large", "Coffee-Cold", 150);
+INSERT INTO delacecoffee VALUES (28, "Ice Cafe American", 5.09, "Large", "Coffee-Cold", 123);
+INSERT INTO delacecoffee VALUES (29, "Hibiscus-Berry", 5.85, "Large", "Tea-Cold", 155);
+INSERT INTO delacecoffee VALUES (30, "Coconut Tea", 5.75, "Large", "Tea-Cold", 153);
+
+----display the database ordered by price.
+SELECT *
+FROM delacecoffee
+ORDER BY Cost;
+
+--What is the total sale of each item?
+SELECT item, cost*sold as TotalSale
+From delacecoffee
+Group by item
+
+--What is the total sale?
+SELECT sum(cost*sold) as TotalSale
+FROM delacecoffee;
+
+--Top five most ordered items
+SELECT *
+FROM delacecoffee
+ORDER BY SOLD desc
+LIMIT 5;
