@@ -41,3 +41,68 @@ INSERT INTO famous VALUES (6,"Taraji Henson", "Movie Star");
 INSERT INTO personallife VALUES (6, "YES", "YES");
 
 INSERT INTO movies VALUES (6, 5, "Hidden Figures", 2016);
+
+INSERT INTO famous VALUES (7,"Brie Larson", "Movie Star");
+
+INSERT INTO personallife VALUES (7, "NO", "NO");
+
+INSERT INTO movies VALUES (7, 8, "The Marvels", 2023);
+
+INSERT INTO famous VALUES (8,"Zawe Ashton", "Movie Star");
+
+INSERT INTO personallife VALUES (8, "YES", "NO");
+
+INSERT INTO movies VALUES (8, 7, "The Marvels", 2023);
+
+INSERT INTO famous VALUES (9,"Daniel Radcliffe", "Movie Star");
+
+INSERT INTO personallife VALUES (9, "YES", "NO");
+
+INSERT INTO movies VALUES (9, 10, "Harry Potter and the Sorcerer's Stone", 2001);
+
+INSERT INTO famous VALUES (10,"Emma Watson", "Movie Star");
+
+INSERT INTO personallife VALUES (10, "YES", "NO");
+
+INSERT INTO movies VALUES (10, 9, "Harry Potter and the Sorcerer's Stone", 2001);
+
+INSERT INTO famous VALUES (11,"Tom Holland", "Movie Star");
+
+INSERT INTO personallife VALUES (11, "YES", "NO");
+
+INSERT INTO movies VALUES (11, 12, "Spider-Man: No Way Home", 2021);
+
+INSERT INTO famous VALUES (12,"Zendaya", "Movie Star");
+
+INSERT INTO personallife VALUES (12, "YES", "NO");
+
+INSERT INTO movies VALUES (12, 11, "Spider-Man: No Way Home", 2021);
+
+INSERT INTO famous VALUES (13,"Natalie Portman", "Movie Star");
+
+INSERT INTO personallife VALUES (13, "YES", "YES");
+
+INSERT INTO movies VALUES (13, 14, "V for Vendetta", 2005);
+
+INSERT INTO famous VALUES (14,"Hugo Weaving", "Movie Star");
+
+INSERT INTO personallife VALUES (14, "YES", "YES");
+
+INSERT INTO movies VALUES (14, 13, "V for Vendetta", 2005);
+
+INSERT INTO famous VALUES (15,"Elliot Page", "Movie Star");
+
+INSERT INTO personallife VALUES (15, "NO", "NO");
+
+INSERT INTO movies VALUES (15, 16, "Juno", 2007);
+
+INSERT INTO famous VALUES (16,"Michael Cera", "Movie Star");
+
+INSERT INTO personallife VALUES (16, "NO", "NO");
+
+INSERT INTO movies VALUES (16, 15, "Juno", 2007);
+
+SELECT famous.fullname, movies.costar
+FROM famous
+JOIN movies
+on famous.id = movies.id
