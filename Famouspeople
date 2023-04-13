@@ -1,0 +1,43 @@
+/* Create table about the people and what they do here */
+
+CREATE TABLE famous (ID INTEGER PRIMARY KEY, fullname TEXT, occupation TEXT);
+
+CREATE TABLE personallife (ID INTEGER PRIMARY KEY, married TEXT, children INTEGER);
+
+CREATE TABLE movies (ID INTEGER PRIMARY KEY, costar INTEGER, movie TEXT, year INTEGER);
+
+INSERT INTO famous VALUES (1, "Margot Robbie", "Movie Star");
+
+INSERT INTO personallife VALUES (1, "NO", "NO");
+
+INSERT INTO movies VALUES (1, 2, "Barbie", 2023);
+
+INSERT INTO famous VALUES (2, "Ryan Gosling", "Movie Star");
+
+INSERT INTO personallife VALUES (2, "YES", "YES");
+
+INSERT INTO movies VALUES (2, 1, "Barbie", 2023);
+
+INSERT INTO famous VALUES (3, "Jennifer Lawrence", "Movie Star");
+
+INSERT INTO personallife VALUES (3, "NO", "NO");
+
+INSERT INTO movies VALUES (3, 4, "Hunger Games", 2012);
+
+INSERT INTO famous VALUES (4,"Josh Hutcherson", "Movie Star");
+
+INSERT INTO personallife VALUES (4, "NO", "NO");
+
+INSERT INTO movies VALUES (4, 3, "Hunger Games", 2012);
+
+INSERT INTO famous VALUES (5,"Octavia Spencer", "Movie Star");
+
+INSERT INTO personallife VALUES (5, "YES", "YES");
+
+INSERT INTO movies VALUES (5, 6, "Hidden Figures", 2016);
+
+INSERT INTO famous VALUES (6,"Taraji Henson", "Movie Star");
+
+INSERT INTO personallife VALUES (6, "YES", "YES");
+
+INSERT INTO movies VALUES (6, 5, "Hidden Figures", 2016);
