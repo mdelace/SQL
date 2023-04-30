@@ -19,3 +19,52 @@ valence decimal(4,3) NOT NULL,
 tempo decimal(6,3) NOT NULL,
 duration_ms integer NOT NULL,
 time_signature integer NOT NULL )
+
+--Top ten Artist with multiple songs.
+SELECT artist_name, count(artist_name) as songs
+FROM spotifydata
+GROUP BY artist_name
+ORDER BY songs DESC
+LIMIT 10;
+
+--What is the average danceability of the most popular tracks?
+SELECT avg(danceability)
+FROM spotifydata;
+
+--List most popular songs in the dataset descending? 
+SELECT track_name,popularity
+from spotifydata
+order by popularity desc;
+
+--What is the average tempo of the most popular tracks?
+SELECT avg(tempo)
+FROM spotifydata;
+
+--Which keys are the most common in popular tracks with popularity greater than or equal to 80?
+SELECT song_key, count(song_key)
+FROM spotifydata
+WHERE popularity >= 80
+GROUP BY song_key
+ORDER BY song_key desc
+LIMIT 1;
+
+--Group time signatures and count.
+SELECT time_signature, count(time_signature)
+FROM spotifydata
+GROUP BY time_signature
+
+What's the most energetic song in the dataset? 
+SELECT artist_name, track_name,max(energy)
+from spotifydata;
+
+--Is there a correlation between danceability and popularity?
+SELECT ((COUNT(*) * SUM(danceability * popularity)) - (SUM(danceability) * SUM(popularity))
+) / (
+  SQRT((COUNT(*) * SUM(danceability * danceability)) - (SUM(danceability) * SUM(danceability))) * 
+  SQRT((COUNT(*) * SUM(popularity * popularity)) - (SUM(popularity) * SUM(popularity)))
+) as correlation
+FROM spotifydata;
+
+
+
+
