@@ -149,3 +149,31 @@ SELECT i.transcript, p.name
 |she's around 5'5" (65") or 5'7" (67"). She has red hair and she drives a Tesla |             |
 |Model S. I know that she attended the SQL Symphony Concert 3 times in December |             |
 |2017.	                                                                        |             |
+
+--Based on the result query. I filtered and used the following query.
+
+SELECT p.name
+  FROM drivers_license dl
+  JOIN person p
+  ON dl.id = p.license_id
+  JOIN facebook_event_checkin fb
+  ON p.id = fb.person_id
+  WHERE dl.gender = 'female'
+  AND dl.height between 65 AND 67
+  AND dl.hair_color = 'red'
+  AND dl.car_model = 'Model S'
+  AND dl.car_make = 'Tesla'
+  AND fb.event_name like '%SQL Symphony Concert%'
+  AND fb.date like '%2017%';
+
+***Results***
+|name             |
+|Miranda Priestly |
+
+
+INSERT INTO solution VALUES (1, 'Miranda Priestly');
+        SELECT value FROM solution;
+        
+***Results***
+Congrats, you found the brains behind the murder! Everyone in SQL City hails you as the greatest 
+SQL detective of all time. Time to break out the champagne!
