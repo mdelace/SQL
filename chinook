@@ -1,4 +1,4 @@
-This dataset is called 'chinook'. 
+This dataset is called 'chinook'. I am using SQLite
 
 --Show Customers (their full names, customer ID, and country) who are not in the US. (Hint: != or <> can be used to say "is not equal to")
 
@@ -14,4 +14,18 @@ SELECT firstname, lastname, country
   
 --Find the Invoices of customers who are from Brazil. The resulting table should show the customer's full name, Invoice ID, Date of the invoice, 
 and billing country.
+
+SELECT c.firstname||' '|| c.lastname AS fullname, i.invoiceid, i.billingcountry
+  FROM chinook.customers c
+  JOIN chinook.invoices i
+  ON c.customerid = i.customerid
+  WHERE c.country = 'Brazil';
+
+--Show the Employees who are Sales Agents.
+SELECT *
+  FROM chinook.employees
+  WHERE title LIKE 'Sales%'
+  AND title LIKE '%Agent';
+ 
+
 
