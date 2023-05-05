@@ -27,5 +27,7 @@ SELECT *
   WHERE title LIKE 'Sales%'
   AND title LIKE '%Agent';
  
+--Find a unique/distinct list of billing countries from the Invoice table.
 
-
+SELECT DISTINCT (Billingcountry)
+  FROM chinook.invoices
