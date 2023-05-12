@@ -65,8 +65,59 @@ SELECT ROUND(sum(total),2)
   FROM chinook.invoices
   WHERE strftime('%Y',invoiceDate) = '2009';
   
+--Write a query that includes the purchased track name with each invoice line ID.
+
+SELECT t.name, it.invoicelineid
+  FROM chinook.tracks t
+  JOIN chinook.invoice_items it
+  ON it.trackid = t.trackid;
+
+--Write a query that includes the purchased track name AND artist name with each invoice line ID.BIT_DB
+
+SELECT item.invoicelineid, track.name AS TrackName, artists.name AS ArtistName
+  FROM chinook.invoice_items item
+  JOIN chinook.tracks track
+  ON item.trackid = track.trackid
+  JOIN chinook.albums albums
+  ON track.albumid = albums.albumid
+  JOIN chinook.artists artists
+  ON albums.artistid = artists.artistid;
   
+--Provide a query that shows all the Tracks, and include the Album name, Media type, and Genre.
+
+SELECT tracks.name AS TrackName, albums.title AS AlbumTitle, media.name AS MediaType, genres.name AS Genres
+  FROM chinook.tracks tracks
+  JOIN chinook.albums albums
+  ON tracks.albumid = albums.albumid
+  JOIN chinook.media_types media
+  ON media.mediatypeid = tracks.mediatypeid
+  JOIN chinook.genres genres
+  ON genres.genreid = tracks.genreid;
   
+--Show the total sales made by each sales agent.
+
+SELECT e.firstname||' '|| e.lastname AS fullname, ROUND(sum(items.quantity*items.unitprice),2) AS TotalSales
+  FROM chinook.invoice_items items
+  JOIN chinook.invoices i
+  ON items.invoiceid = i.invoiceid
+  JOIN chinook.customers c
+  ON i.customerid = c.customerid
+  JOIN chinook.employees e 
+  ON e.employeeid = c.supportrepid
+  GROUP BY e.employeeid;
+  
+--Show the total sales made by each sales agent.
+
+SELECT e.firstname||' '|| e.lastname AS fullname, ROUND(sum(items.quantity*items.unitprice),2) AS TotalSales
+  FROM chinook.invoice_items items
+  JOIN chinook.invoices i
+  ON items.invoiceid = i.invoiceid
+  JOIN chinook.customers c
+  ON i.customerid = c.customerid
+  JOIN chinook.employees e 
+  ON e.employeeid = c.supportrepid
+  WHERE strftime('%Y',invoiceDate) = '2009'
+  GROUP BY e.employeeid;
   
 
 
