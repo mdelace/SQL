@@ -118,10 +118,19 @@ SELECT e.firstname||' '|| e.lastname AS fullname, ROUND(sum(items.quantity*items
   ON e.employeeid = c.supportrepid
   WHERE strftime('%Y',invoiceDate) = '2009'
   GROUP BY e.employeeid;
-  
 
+--Which customers have spent the most money at the store?
 
-1. Which customers have spent the most money at the store?
+SELECT cust.firstname, cust.lastname, inv.total
+  FROM chinook.invoice_items items
+  JOIN chinook.invoices inv
+  ON inv.invoiceid = items.invoiceid
+  JOIN chinook.customers cust
+  ON inv.invoiceid = cust.customerid
+  GROUP BY items.invoiceid
+  ORDER BY inv.total desc
+  LIMIT 10;
+
 2. What are the top 10 most purchased tracks in the database?
 3. What is the average length of a track in the database?
 4. Which genre has the most tracks in the database?
