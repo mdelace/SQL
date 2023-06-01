@@ -1,103 +1,54 @@
 CREATE TABLE famous (ID INTEGER PRIMARY KEY, fullname TEXT, occupation TEXT);
-
 CREATE TABLE personallife (ID INTEGER PRIMARY KEY, married TEXT, children INTEGER);
-
 CREATE TABLE movies (ID INTEGER PRIMARY KEY, costa INTEGER, costar INTEGER, movie TEXT, year INTEGER);
 
 INSERT INTO famous VALUES (1, "Margot Robbie", "Movie Star");
-
 INSERT INTO personallife VALUES (1, "NO", "NO");
-
 INSERT INTO movies VALUES (1,1, 2, "Barbie", 2023);
-
 INSERT INTO famous VALUES (2, "Ryan Gosling", "Movie Star");
-
 INSERT INTO personallife VALUES (2, "YES", "YES");
-
 INSERT INTO movies VALUES (2,2, 1, "Barbie", 2023);
-
 INSERT INTO famous VALUES (3, "Jennifer Lawrence", "Movie Star");
-
 INSERT INTO personallife VALUES (3, "NO", "NO");
-
 INSERT INTO movies VALUES (3,3, 4, "Hunger Games", 2012);
-
 INSERT INTO famous VALUES (4,"Josh Hutcherson", "Movie Star");
-
 INSERT INTO personallife VALUES (4, "NO", "NO");
-
 INSERT INTO movies VALUES (4,4, 3, "Hunger Games", 2012);
-
 INSERT INTO famous VALUES (5,"Octavia Spencer", "Movie Star");
-
 INSERT INTO personallife VALUES (5, "YES", "YES");
-
 INSERT INTO movies VALUES (5,5, 6, "Hidden Figures", 2016);
-
 INSERT INTO famous VALUES (6,"Taraji Henson", "Movie Star");
-
 INSERT INTO personallife VALUES (6, "YES", "YES");
-
 INSERT INTO movies VALUES (6,6, 5, "Hidden Figures", 2016);
-
 INSERT INTO famous VALUES (7,"Brie Larson", "Movie Star");
-
 INSERT INTO personallife VALUES (7, "NO", "NO");
-
 INSERT INTO movies VALUES (7,7, 8, "The Marvels", 2023);
-
 INSERT INTO famous VALUES (8,"Zawe Ashton", "Movie Star");
-
 INSERT INTO personallife VALUES (8, "YES", "NO");
-
 INSERT INTO movies VALUES (8,8, 7, "The Marvels", 2023);
-
 INSERT INTO famous VALUES (9,"Daniel Radcliffe", "Movie Star");
-
 INSERT INTO personallife VALUES (9, "YES", "NO");
-
 INSERT INTO movies VALUES (9,9, 10, "Harry Potter and the Sorcerer's Stone", 2001);
-
 INSERT INTO famous VALUES (10,"Emma Watson", "Movie Star");
-
 INSERT INTO personallife VALUES (10, "YES", "NO");
-
 INSERT INTO movies VALUES (10,10, 9, "Harry Potter and the Sorcerer's Stone", 2001);
-
 INSERT INTO famous VALUES (11,"Tom Holland", "Movie Star");
-
 INSERT INTO personallife VALUES (11, "YES", "NO");
-
 INSERT INTO movies VALUES (11,11, 12, "Spider-Man: No Way Home", 2021);
-
 INSERT INTO famous VALUES (12,"Zendaya", "Movie Star");
-
 INSERT INTO personallife VALUES (12, "YES", "NO");
-
 INSERT INTO movies VALUES (12,12, 11, "Spider-Man: No Way Home", 2021);
-
 INSERT INTO famous VALUES (13,"Natalie Portman", "Movie Star");
-
 INSERT INTO personallife VALUES (13, "YES", "YES");
-
 INSERT INTO movies VALUES (13,13, 14, "V for Vendetta", 2005);
-
 INSERT INTO famous VALUES (14,"Hugo Weaving", "Movie Star");
-
 INSERT INTO personallife VALUES (14, "YES", "YES");
-
 INSERT INTO movies VALUES (14,14, 13, "V for Vendetta", 2005);
-
 INSERT INTO famous VALUES (15,"Elliot Page", "Movie Star");
-
 INSERT INTO personallife VALUES (15, "NO", "NO");
-
 INSERT INTO movies VALUES (15,15, 16, "Juno", 2007);
-
 INSERT INTO famous VALUES (16,"Michael Cera", "Movie Star");
-
 INSERT INTO personallife VALUES (16, "NO", "NO");
-
 INSERT INTO movies VALUES (16,16, 15, "Juno", 2007);
 
 
