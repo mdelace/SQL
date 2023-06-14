@@ -1,3 +1,10 @@
+****I have successfully designed and implemented a database with three tables; 'Famous', 'personallife', and 'movies'.
+I also populated them with relevant data. 
+  I'd like to point out that the database and its contents are for demonstration purposes only and do not reflect actual data. ****
+
+
+
+
 CREATE TABLE famous (ID INTEGER PRIMARY KEY, fullname TEXT, occupation TEXT);
 CREATE TABLE personallife (ID INTEGER PRIMARY KEY, married TEXT, children INTEGER);
 CREATE TABLE movies (ID INTEGER PRIMARY KEY, costa INTEGER, costar INTEGER, movie TEXT, year INTEGER);
