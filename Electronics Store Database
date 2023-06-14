@@ -56,10 +56,3 @@ SELECT product, sum(quantity)
 FROM BIT_DB.FebSales
 WHERE location LIKE '%los angeles%'
 GROUP BY product;
-
-
-
-
-
-
-
