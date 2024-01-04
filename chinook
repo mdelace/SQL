@@ -1,5 +1,34 @@
 This dataset is called 'chinook'. I am using SQLite
 
+--Top Selling Genres:
+Which genres are the top-selling in terms of total revenue?
+
+SELECT g.name, SUM(ii.unitprice * ii.quantity) AS total_revenue
+FROM chinook.invoice_items ii
+JOIN chinook.invoices i 
+ON ii.invoiceid = i.invoiceid
+JOIN chinook.tracks t 
+ON ii.trackid = t.trackid
+JOIN chinook.genres g 
+ON t.genreid = g.genreid
+GROUP BY g.name
+ORDER BY total_revenue desc;
+
+
+--Employee Sales Performance:
+How do the sales performances of different employees compare?
+
+SELECT e.firstname || ' ' || e.lastname AS Employee, SUM(unitprice * quantity) AS TotalSales
+FROM customers c
+JOIN employees e
+ON c.SupportRepId = e.EmployeeId
+JOIN invoices i
+ON c.customerid = i.customerid
+JOIN invoice_items ii
+ON ii.invoiceid = i.invoiceid
+GROUP BY Employee
+ORDER BY TotalSales DESC
+
 --Show Customers (their full names, customer ID, and country) who are not in the US. (Hint: != or <> can be used to say "is not equal to")
 
 SELECT firstname, lastname, customerid, country
